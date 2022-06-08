@@ -79,16 +79,13 @@ for (int i = 0; i < 5; i++)
     Sred[i] = (Math.Round(Sred[i], 2) / 10);
     Console.WriteLine(Sred[i]);
 }
-
-double[] mas2 = new double[5] /*{ sred1, sred2, sred3, sred4, sred5 }*/ { Sred[0], Sred[1], Sred[2], Sred[3], Sred[4] }; // Создаём массив для средних значений
-
 // Поиск наибольшего числа
 double Max1 = -101;
 for (int i = 0; i < 5; i++)
 {
-    if (Max1 < mas2[i])
+    if (Max1 < Sred[i])
     {
-        Max1 = mas2[i];
+        Max1 = Sred[i];
     }
 }
 Console.Write($"\nНаибольшее число: {Max1}\n");
@@ -102,9 +99,9 @@ for (int i = -10; i < 11; i++)
 double Min1 = 101;
 for (int i = 0; i < 5; i++)
 {
-    if (Min1 > mas2[i])
+    if (Min1 > Sred[i])
     {
-        Min1 = mas2[i];
+        Min1 = Sred[i];
     }
 }
 Console.Write($"\nНаименьшее число: {Min1}\n");
