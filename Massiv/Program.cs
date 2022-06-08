@@ -68,18 +68,19 @@ for (int i = -10; i < 11; i++)
 
 Console.WriteLine("\nСреднее арифметическое для каждой строки:");
 // Суммирование всех элементов строки и деления их на 10
-double sred1 = ((Math.Abs(mas1[0, 0]) + Math.Abs(mas1[0, 1]) + Math.Abs(mas1[0, 2]) + Math.Abs(mas1[0, 3]) + Math.Abs(mas1[0, 4]) + Math.Abs(mas1[0, 5]) + Math.Abs(mas1[0, 6]) + Math.Abs(mas1[0, 7]) + Math.Abs(mas1[0, 8]) + Math.Abs(mas1[0, 9])) / 10);
-Console.WriteLine(sred1);
-double sred2 = ((Math.Abs(mas1[1, 0]) + Math.Abs(mas1[1, 1]) + Math.Abs(mas1[1, 2]) + Math.Abs(mas1[1, 3]) + Math.Abs(mas1[1, 4]) + Math.Abs(mas1[1, 5]) + Math.Abs(mas1[1, 6]) + Math.Abs(mas1[1, 7]) + Math.Abs(mas1[1, 8]) + Math.Abs(mas1[1, 9])) / 10);
-Console.WriteLine(sred2);
-double sred3 = ((Math.Abs(mas1[2, 0]) + Math.Abs(mas1[2, 1]) + Math.Abs(mas1[2, 2]) + Math.Abs(mas1[2, 3]) + Math.Abs(mas1[2, 4]) + Math.Abs(mas1[2, 5]) + Math.Abs(mas1[2, 6]) + Math.Abs(mas1[2, 7]) + Math.Abs(mas1[2, 8]) + Math.Abs(mas1[2, 9])) / 10);
-Console.WriteLine(sred3);
-double sred4 = ((Math.Abs(mas1[3, 0]) + Math.Abs(mas1[3, 1]) + Math.Abs(mas1[3, 2]) + Math.Abs(mas1[3, 3]) + Math.Abs(mas1[3, 4]) + Math.Abs(mas1[3, 5]) + Math.Abs(mas1[3, 6]) + Math.Abs(mas1[3, 7]) + Math.Abs(mas1[3, 8]) + Math.Abs(mas1[3, 9])) / 10);
-Console.WriteLine(sred4);
-double sred5 = ((Math.Abs(mas1[4, 0]) + Math.Abs(mas1[4, 1]) + Math.Abs(mas1[4, 2]) + Math.Abs(mas1[4, 3]) + Math.Abs(mas1[4, 4]) + Math.Abs(mas1[4, 5]) + Math.Abs(mas1[4, 6]) + Math.Abs(mas1[4, 7]) + Math.Abs(mas1[4, 8]) + Math.Abs(mas1[4, 9])) / 10);
-Console.WriteLine(sred5);
+double[] Sred = new double[5] {0,0,0,0,0};
+for (int i = 0; i < 5; i++)
+{
+    for (int j = 0; j < 10; j++)
+    {
+        Sred[i] += Math.Abs(mas1[i, j]);
+        
+    }
+    Sred[i] = (Math.Round(Sred[i], 2) / 10);
+    Console.WriteLine(Sred[i]);
+}
 
-double[] mas2 = new double[5] { sred1, sred2, sred3, sred4, sred5 }; // Создаём массив для средних значений
+double[] mas2 = new double[5] /*{ sred1, sred2, sred3, sred4, sred5 }*/ { Sred[0], Sred[1], Sred[2], Sred[3], Sred[4] }; // Создаём массив для средних значений
 
 // Поиск наибольшего числа
 double Max1 = -101;
